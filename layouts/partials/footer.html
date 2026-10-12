@@ -17,7 +17,7 @@
 
 {{ $bundle := slice $menu $cp | resources.Concat "bundle.js" | resources.Minify }}
 
-<script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
+<script type="text/javascript" src="{{ $bundle.Permalink }}"></script>
 
 <!-- Extended footer section-->
 {{ partial "extended_footer.html" . }}

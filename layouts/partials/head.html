@@ -51,7 +51,7 @@
 {{ if (isset .Params "cover") }}
   {{ $pageCover = .Param "cover" }}
   {{ with (.Resources.GetMatch (.Param "cover")) }}
-    {{ $pageCover = .RelPermalink }}
+    {{ $pageCover = .Permalink }}
   {{ end }}
 {{ else if (or (.Params.autocover) ($.Site.Params.autocover)) }}
   {{ with .Resources.GetMatch "cover.*" }}
@@ -70,12 +70,12 @@
 
 <!-- RSS -->
 {{ with .OutputFormats.Get "RSS" }}
-  <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+  <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
 {{ end }}
 
 <!-- JSON Feed -->
 {{ with .OutputFormats.Get "json" }}
-  <link href="{{ .RelPermalink }}" rel="alternate" type="application/json" title="{{ $.Site.Title }}" />
+  <link href="{{ .Permalink }}" rel="alternate" type="application/json" title="{{ $.Site.Title }}" />
 {{ end }}
 
 <!-- Extended head section-->
